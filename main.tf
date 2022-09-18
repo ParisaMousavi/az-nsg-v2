@@ -19,12 +19,12 @@ resource "azurerm_network_security_rule" "this" {
   direction                    = each.value.direction
   access                       = each.value.access
   protocol                     = each.value.protocol
-  source_port_range            = each.value.protocol
-  source_port_ranges           = each.value.protocol
-  destination_port_range       = each.value.protocol
-  destination_port_ranges      = each.value.protocol
-  source_address_prefix        = each.value.protocol
-  source_address_prefixes      = each.value.protocol
-  destination_address_prefix   = each.value.protocol
-  destination_address_prefixes = each.value.protocol
+  source_port_range            = each.value.source_port_range
+  source_port_ranges           = each.value.source_port_ranges
+  destination_port_range       = each.value.destination_port_range
+  destination_port_ranges      = each.value.destination_port_ranges
+  source_address_prefix        = each.value.source_address_prefix
+  source_address_prefixes      = each.value.source_address_prefixes
+  destination_address_prefix   = each.value.destination_address_prefix
+  destination_address_prefixes = each.value.destination_address_prefixes
 }
