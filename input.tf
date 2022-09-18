@@ -34,3 +34,7 @@ variable "security_rules" {
   }))
   default = null
 }
+
+variable "subnet_id" {
+  type = string 
+}
