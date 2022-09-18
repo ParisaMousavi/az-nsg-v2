@@ -11,7 +11,7 @@ resource "azurerm_network_security_group" "this" {
 }
 
 resource "azurerm_network_security_rule" "this" {
-  for_each                     = var.security_rules
+  for_each                     = set(var.security_rules)
   name                         = each.value.name
   resource_group_name          = var.resource_group_name
   network_security_group_name  = azurerm_network_security_group.this.name
