@@ -21,8 +21,8 @@ resource "azurerm_network_security_rule" "this" {
   protocol                    = each.value.protocol
   source_port_range           = each.value.source_port_range
   destination_port_range      = each.value.destination_port_range
-  source_address_prefixe      = each.value.source_address_prefixe
-  destination_address_prefixe = each.value.destination_address_prefixe
+  source_address_prefix      = each.value.source_address_prefix
+  destination_address_prefix = each.value.destination_address_prefix
   # source_port_ranges           = each.value.source_port_ranges 
   # destination_port_ranges      = each.value.destination_port_ranges 
   # source_address_prefixes      = each.value.source_address_prefixes 
