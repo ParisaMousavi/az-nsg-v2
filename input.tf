@@ -35,3 +35,7 @@ variable "security_rules" {
   default = []
 }
 
+variable "log_analytics_workspace_id" {
+  type = string
+  default = null
+}
