@@ -25,20 +25,20 @@ resource "azurerm_network_security_rule" "this" {
   destination_port_ranges      = each.value.destination_port_ranges
   source_address_prefix        = each.value.source_address_prefix
   source_address_prefixes      = each.value.source_address_prefixes
-  destination_address_prefix   = each.value.destination_address_prefix 
+  destination_address_prefix   = each.value.destination_address_prefix
   destination_address_prefixes = each.value.destination_address_prefixes
 }
 
 resource "azurerm_monitor_diagnostic_setting" "this" {
-  count = var.log_analytics_workspace_id == null ? 0 : 1
+  count                      = var.log_analytics_workspace_id == null ? 0 : 1
   name                       = "logs-metrics-2-workspace"
   target_resource_id         = azurerm_network_security_group.this.id
-  log_analytics_workspace_id = var.log_analytics_workspace_id 
-  log {
+  log_analytics_workspace_id = var.log_analytics_workspace_id
+  enabled_log {
     category_group = "allLogs"
     retention_policy {
-      enabled = false
-      days = 0
+      enabled = true
+      days    = 0
     }
   }
 }

@@ -36,6 +36,6 @@ variable "security_rules" {
 }
 
 variable "log_analytics_workspace_id" {
-  type = string
+  type    = string
   default = null
 }
