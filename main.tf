@@ -35,7 +35,7 @@ resource "azurerm_monitor_diagnostic_setting" "this" {
   target_resource_id         = azurerm_network_security_group.this.id
   log_analytics_workspace_id = var.log_analytics_workspace_id
   enabled_log {
-    category_group = "allLogs"
+    category = "allLogs"
     retention_policy {
       enabled = true
       days    = 0
